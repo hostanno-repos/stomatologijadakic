@@ -48,7 +48,7 @@
 							<p>Izrađeni su od metala titana, koji je biokompatibilan i ne izaziva alergijske reakcije. Bijela boja implantata daje visoko estetski rezultat, što je posebno važno kod zamjene zuba u prednjem, vidljivom dijelu vašeg osmijeha, ali i u težim slučajevima, gdje nedostaje kosti i mekog tkiva.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img src="img/usluge-slider/implantologija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_implantologija') : 'img/usluge-slider/implantologija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 				</div>

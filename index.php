@@ -45,7 +45,7 @@
 											<div class="featured-box featured-box-primary">
 												<div class="box-content">
 													<span class="icon-featured icon-featured-lg">
-														<img height="100" src="img/demos/dentist/icons/icon-1.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
+														<img height="100" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('index_box_icon1') : 'img/demos/dentist/icons/icon-1.svg'); ?>" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
 													</span>
 													<h4 class="font-weight-semi-bold mt-3 pt-2 mb-3 text-5-5 text-color-dark"><?php echo function_exists('getContent') ? getContent('index', 'box1_title', 'Super lokacija') : 'Super lokacija'; ?></h4>
 													<p class="mb-0 text-3-5 font-weight-medium"><?php echo function_exists('getContent') ? getContent('index', 'box1_text', 'Nalazimo se u samom centru grada, posjedujemo svoj parking i caffe bar.') : 'Nalazimo se u samom centru grada, posjedujemo svoj parking i caffe bar.'; ?></p>
@@ -56,7 +56,7 @@
 											<div class="featured-box featured-box-secondary">
 												<div class="box-content">
 													<span class="icon-featured icon-featured-lg">
-														<img height="100" src="img/demos/dentist/icons/icon-2.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
+														<img height="100" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('index_box_icon2') : 'img/demos/dentist/icons/icon-2.svg'); ?>" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
 													</span>
 													<h4 class="font-weight-semi-bold mt-3 pt-2 mb-3 text-5-5 text-color-dark"><?php echo function_exists('getContent') ? getContent('index', 'box2_title', 'Odlična usluga') : 'Odlična usluga'; ?></h4>
 													<p class="mb-0 text-3-5 font-weight-medium"><?php echo function_exists('getContent') ? getContent('index', 'box2_text', 'Mi brinemo o svakom pacijentu, Vaše zadovoljstvo je naš uspjeh.') : 'Mi brinemo o svakom pacijentu, Vaše zadovoljstvo je naš uspjeh.'; ?></p>
@@ -67,7 +67,7 @@
 											<div class="featured-box featured-box-tertiary">
 												<div class="box-content">
 													<span class="icon-featured icon-featured-lg">
-														<img height="100" src="img/demos/dentist/icons/icon-3.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
+														<img height="100" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('index_box_icon3') : 'img/demos/dentist/icons/icon-3.svg'); ?>" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary mt-1'}" />
 													</span>
 													<h4 class="font-weight-semi-bold mt-3 pt-2 mb-3 text-5-5 text-color-dark"><?php echo function_exists('getContent') ? getContent('index', 'box3_title', 'Vrhunski stručnjaci') : 'Vrhunski stručnjaci'; ?></h4>
 													<p class="mb-0 text-3-5 font-weight-medium"><?php echo function_exists('getContent') ? getContent('index', 'box3_text', 'Zapošljavamo samo vrhunske stručnjake stomatologije.') : 'Zapošljavamo samo vrhunske stručnjake stomatologije.'; ?></p>
@@ -94,7 +94,7 @@
 										</defs>
 									</svg>	
 
-									<img class="img-fluid" style="clip-path: url(#svgPath); min-height: 480px; max-width: 420px;" src="img/demos/dentist/generic/generic-5.jpg" alt="">
+									<img class="img-fluid" style="clip-path: url(#svgPath); min-height: 480px; max-width: 420px;" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('index_hero') : 'img/demos/dentist/generic/generic-5.jpg'); ?>" alt="">
 
 								</div>
 								<div class="col-lg-6 ps-lg-4 ps-xl-5">
@@ -130,7 +130,7 @@
 									<div>
 										<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 											<span class="thumb-info-wrapper overlay overlay-op-3 overlay-show overflow-hidden">
-												<img src="img/usluge-slider/ortodoncija.jpg" class="img-fluid" alt="" style="height:100%;object-fit:cover;">
+												<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_ortodoncija') : 'img/usluge-slider/ortodoncija.jpg'); ?>" class="img-fluid" alt="" style="height:100%;object-fit:cover;">
 												<span class="thumb-info-title bg-transparent w-100 mw-100 p-0 top-0 p-5">
 													<span class="anim-hover-inner-translate-bottom-20px transition-2ms d-inline-block">
 														<span class="thumb-info-inner">
@@ -141,7 +141,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon1.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon1') : 'img/usluge-slider/icon1.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Ortodoncija se  bavi dijagnostikom, prevencijom i ispravljanjem nepravilnog položaja zuba.</p>
@@ -166,7 +166,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon5.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon5') : 'img/usluge-slider/icon5.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Potražite najkvalitetnije na tržištu mostove i krunice, ispune te mobilne i fiksne proteze za lijep osmjeh.</p>
@@ -180,7 +180,7 @@
 									<div>
 										<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 											<span class="thumb-info-wrapper overlay overlay-op-3 overlay-show overflow-hidden">
-												<img src="img/usluge-slider/estetika.jpg" class="img-fluid" alt="">
+												<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_estetika') : 'img/usluge-slider/estetika.jpg'); ?>" class="img-fluid" alt="">
 												<span class="thumb-info-title bg-transparent w-100 mw-100 p-0 top-0 p-5">
 													<span class="anim-hover-inner-translate-bottom-20px transition-2ms d-inline-block">
 														<span class="thumb-info-inner">
@@ -191,7 +191,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon3.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon3') : 'img/usluge-slider/icon3.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Botox, hijaluronski fileri, mezoterapija lica.</p>
@@ -216,7 +216,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon4.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon4') : 'img/usluge-slider/icon4.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Endodoncija se bavi liječenjem zuba i korijenskih kanala, tj. Oboljele zubne pulpe.</p>
@@ -230,7 +230,7 @@
 									<div>
 										<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 											<span class="thumb-info-wrapper overlay overlay-op-3 overlay-show overflow-hidden">
-												<img src="img/usluge-slider/implantologija.jpg" class="img-fluid" alt="">
+												<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_implantologija') : 'img/usluge-slider/implantologija.jpg'); ?>" class="img-fluid" alt="">
 												<span class="thumb-info-title bg-transparent w-100 mw-100 p-0 top-0 p-5">
 													<span class="anim-hover-inner-translate-bottom-20px transition-2ms d-inline-block">
 														<span class="thumb-info-inner">
@@ -241,7 +241,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon2.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon2') : 'img/usluge-slider/icon2.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Trebate zubne implantate nite sigurni da li je all-on-4 ili all-on-6 najbolje riješenje za Vas?Zakažite konsultacije.</p>
@@ -255,7 +255,7 @@
 									<div>
 										<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 											<span class="thumb-info-wrapper overlay overlay-op-3 overlay-show overflow-hidden">
-												<img src="img/usluge-slider/radiologija.jpg" class="img-fluid" alt="">
+												<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_radiologija') : 'img/usluge-slider/radiologija.jpg'); ?>" class="img-fluid" alt="">
 												<span class="thumb-info-title bg-transparent w-100 mw-100 p-0 top-0 p-5">
 													<span class="anim-hover-inner-translate-bottom-20px transition-2ms d-inline-block">
 														<span class="thumb-info-inner">
@@ -291,7 +291,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon6.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon6') : 'img/usluge-slider/icon6.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Vađenje zuba, apikotomija, cistektomija, gingivektomija Gummy Smile, cirkumcizija, terapija alveolita.</p>
@@ -305,7 +305,7 @@
 									<div>
 										<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 											<span class="thumb-info-wrapper overlay overlay-op-3 overlay-show overflow-hidden">
-												<img src="img/usluge-slider/izbjeljivanje.jpg" class="img-fluid" alt="">
+												<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_izbjeljivanje') : 'img/usluge-slider/izbjeljivanje.jpg'); ?>" class="img-fluid" alt="">
 												<span class="thumb-info-title bg-transparent w-100 mw-100 p-0 top-0 p-5">
 													<span class="anim-hover-inner-translate-bottom-20px transition-2ms d-inline-block">
 														<span class="thumb-info-inner">
@@ -316,7 +316,7 @@
 												<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 													<span class="thumb-info-swap-content-wrapper">
 														<span class="thumb-info-inner text-start ps-5">
-															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="img/usluge-slider/icon7.png" />
+															<img style="max-width: 60px;" height="60" width="60" class="transform-none mb-3" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_icon7') : 'img/usluge-slider/icon7.png'); ?>" />
 														</span>
 														<span class="thumb-info-inner text-2">
 															<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Ordinacijsko i kućno bijeljenje zuba.</p>
@@ -381,142 +381,50 @@
 									<h3 class="text-color-dark text-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250"><?php echo function_exists('getContent') ? getContent('index', 'team_main_title', 'Upoznajte naše zaposlene') : 'Upoznajte naše zaposlene'; ?></h3>
 									<p class="text-3-5 font-weight-medium pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500"><?php echo function_exists('getContent') ? getContent('index', 'team_description', 'Stomatologija "Dakić" je tim vrhunskih stručnjaka iz svih oblasti stomatologije. Tu smo da Vaš osmjeh učinimo blistavim.') : 'Stomatologija "Dakić" je tim vrhunskih stručnjaka iz svih oblasti stomatologije. Tu smo da Vaš osmjeh učinimo blistavim.'; ?></p>
 
+									<?php
+									$team_employees = function_exists('getEmployees') ? getEmployees() : [];
+									$avatar_male   = 'images/milan-dakic.png';
+									$avatar_female = 'images/tanja-tesevic.png';
+									?>
+									<?php if (!empty($team_employees)): ?>
 									<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-										<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-font-size-lg custom-nav-1 custom-nav-1-pos-3 p-relative mb-0 mt-2" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 40}">
+										<div class="p-relative">
+											<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-font-size-lg custom-nav-1 custom-nav-1-pos-3 p-relative mb-0 mt-2 js-team-carousel" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 40}">
+												<?php foreach ($team_employees as $emp):
+												if (!empty($emp['image'])) {
+													$emp_img = 'admin/' . ltrim($emp['image'], '/');
+												} else {
+													$emp_img = (isset($emp['gender']) && $emp['gender'] === 'female') ? $avatar_female : $avatar_male;
+												}
+											?>
 											<div>
 												<div class="card border-0">
 													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
 														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/milan-dakic.png" class="img-fluid" alt="">
+															<img src="<?php echo htmlspecialchars($emp_img); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?>">
 															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
 																<span class="thumb-info-swap-content-wrapper">
 																	<span class="thumb-info-inner text-start ps-5"></span>
 																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('index', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
+																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo htmlspecialchars(!empty($emp['description']) ? $emp['description'] : (function_exists('getContent') ? getContent('index', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima.')); ?></p>
 																	</span>
 																</span>
 															</span>
 														</span>
 													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Milan Dakić</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">spec. ortopedije vilica</p>
+													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0"><?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?></h3>
+													<p class="font-weight-medium text-color-grey text-3 mb-2"><?php echo htmlspecialchars($emp['position']); ?></p>
 												</div>
 											</div>
-											<div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/tanja-tesevic.png" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('index', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
-															</span>
-														</span>
-													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Tanja Tešević</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">doktor stomatologije</p>
-												</div>
+												<?php endforeach; ?>
 											</div>
-											<div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/bilja.png" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('index', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
-															</span>
-														</span>
-													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Biljana Ilić</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">dentalni asistent</p>
-												</div>
+											<div class="owl-nav team-carousel-nav">
+												<button type="button" role="presentation" class="owl-prev" aria-label="Prethodno"><i class="fas fa-chevron-left"></i></button>
+												<button type="button" role="presentation" class="owl-next" aria-label="Sljedeće"><i class="fas fa-chevron-right"></i></button>
 											</div>
-											<!-- <div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="img/demos/dentist/team/team-2.jpg" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere elit in massa congue congue. Ut ornare fermentum sem, vitae port.</p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="http://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li>
-																			<li class="social-icons-facebook">
-																				<a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
-															</span>
-														</span>
-													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Dajana Karalić 2</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">pomoćnik Stomatologa, Ljubavnica 2</p>
-												</div>
-											</div> -->
 										</div>
 									</div>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>

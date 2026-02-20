@@ -40,7 +40,7 @@
 					<div class="header-row">
 						<div class="header-logo">
 							<a href="index.php">
-								<img style="width:100%;max-width:270px;" src="images/logo-horizontal.svg">
+								<img style="width:100%;max-width:270px;" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('logo_header') : 'images/logo-horizontal.svg'); ?>">
 							</a>
 						</div>
 					</div>

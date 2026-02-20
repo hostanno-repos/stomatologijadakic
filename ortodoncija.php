@@ -48,7 +48,7 @@
 							<p>Danas se ortodontske naprave razlikuju po vrsti i namjeni i možemo ih razvrstati u nekoliko grupa. Osnovna podjela je na mobilne i fiksne. Posljednjih petnestak godina kod nas su u širu upotrebu uvedene fiksne ortodontske proteze. Mi radimo sve vrste fiksne i mobilne ortodontske terapije.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img style="max-height:350px" src="img/usluge-slider/ortodoncija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img style="max-height:350px" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_ortodoncija') : 'img/usluge-slider/ortodoncija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 

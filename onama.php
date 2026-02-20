@@ -44,7 +44,7 @@
 								</defs>
 							</svg>	
 
-							<img class="img-fluid" style="clip-path: url(#svgPath); min-height: 480px; max-width: 420px;" src="img/demos/dentist/generic/generic-5.jpg" alt="">
+							<img class="img-fluid" style="clip-path: url(#svgPath); min-height: 480px; max-width: 420px;" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('onama_hero') : 'img/demos/dentist/generic/generic-5.jpg'); ?>" alt="">
 
 						</div>
 						<div class="col-lg-6 ps-lg-4 ps-xl-5">
@@ -88,16 +88,16 @@
 					</div>
 					<div class="row pt-4">
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0 text-center">
-							<img src="img/demos/dentist/services/service-1.jpg" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100" alt="">
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('onama_service_1') : 'img/demos/dentist/services/service-1.jpg'); ?>" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="100" alt="">
 						</div>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0 text-center">
-							<img src="img/demos/dentist/services/service-2.jpg" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" alt="">
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('onama_service_2') : 'img/demos/dentist/services/service-2.jpg'); ?>" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" alt="">
 						</div>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0 text-center">
-							<img src="img/demos/dentist/services/service-3.jpg" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" alt="">
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('onama_service_3') : 'img/demos/dentist/services/service-3.jpg'); ?>" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" alt="">
 						</div>
 						<div class="col-md-6 col-lg-3 mb-4 mb-lg-0 text-center">
-							<img src="img/demos/dentist/services/service-4.jpg" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700" alt="">
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('onama_service_4') : 'img/demos/dentist/services/service-4.jpg'); ?>" class="img-fluid appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700" alt="">
 						</div>
 					</div>
 					<div class="row pt-5">
@@ -113,109 +113,50 @@
 							<h3 class="text-color-dark text-9 line-height-3 text-transform-none font-weight-semibold mb-4 mb-lg-3 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="250">Upoznajte naš tim</h3>
 							<p class="text-3-5 font-weight-medium pb-1 mb-4 mb-lg-2 mb-xl-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Stomatologija "Dakić" je tim vrhunskih stručnjaka iz svih oblasti stomatologije. Tu smo da Vaš osmjeh učinimo blistavim.</p>
 
+							<?php
+							$team_employees = function_exists('getEmployees') ? getEmployees() : [];
+							$avatar_male   = 'images/milan-dakic.png';
+							$avatar_female = 'images/tanja-tesevic.png';
+							?>
+							<?php if (!empty($team_employees)): ?>
 							<div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-								<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-font-size-lg custom-nav-1 custom-nav-1-pos-3 p-relative mb-0 mt-2" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 40}">
-								<div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/milan-dakic.png" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('onama', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
+								<div class="p-relative">
+									<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-font-size-lg custom-nav-1 custom-nav-1-pos-3 p-relative mb-0 mt-2 js-team-carousel" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'loop': true, 'nav': true, 'dots': false, 'margin': 40}">
+										<?php foreach ($team_employees as $emp):
+										if (!empty($emp['image'])) {
+											$emp_img = 'admin/' . ltrim($emp['image'], '/');
+										} else {
+											$emp_img = (isset($emp['gender']) && $emp['gender'] === 'female') ? $avatar_female : $avatar_male;
+										}
+									?>
+									<div>
+										<div class="card border-0">
+											<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
+												<span class="thumb-info-wrapper overlay overflow-hidden">
+													<img src="<?php echo htmlspecialchars($emp_img); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?>">
+													<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
+														<span class="thumb-info-swap-content-wrapper">
+															<span class="thumb-info-inner text-start ps-5"></span>
+															<span class="thumb-info-inner text-2">
+																<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo htmlspecialchars(!empty($emp['description']) ? $emp['description'] : (function_exists('getContent') ? getContent('onama', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima.')); ?></p>
 															</span>
 														</span>
 													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Milan Dakić</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">spec. ortopedije vilica</p>
-												</div>
-											</div>
-											<div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/tanja-tesevic.png" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('onama', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
-															</span>
-														</span>
-													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Tanja Tešević</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">doktor stomatologije</p>
-												</div>
-											</div>
-											<div>
-												<div class="card border-0">
-													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-slow-image-zoom-hover thumb-info-swap-content anim-hover-inner-wrapper">
-														<span class="thumb-info-wrapper overlay overflow-hidden">
-															<img src="images/bilja.png" class="img-fluid" alt="">
-															<span class="thumb-info-title bottom-30 bg-transparent w-100 mw-100 p-0">
-																<span class="thumb-info-swap-content-wrapper">
-																	<span class="thumb-info-inner text-start ps-5"></span>
-																	<span class="thumb-info-inner text-2">
-																		<p class="px-5 text-4 text-lg-2 opacity-7 font-weight-medium text-light"><?php echo function_exists('getContent') ? getContent('onama', 'team_member_description', 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.') : 'Član vrhunskog tima koji će vas svaki put dočekati s osmjehom na licu.'; ?></p>
-
-
-																		<ul class="social-icons social-icons-clean social-icons-icon-light">
-																			<li class="social-icons-instagram">
-																				<a href="https://www.instagram.com/stomatoloska_ord_dr_dakic/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-																			</li>
-																			<!-- <li class="social-icons-twitter">
-																				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-																			</li> -->
-																			<li class="social-icons-facebook">
-																				<a href="https://www.facebook.com/stomatoloskaordinacijaextradent" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-																			</li>
-																		</ul>
-
-																	</span>
-																</span>
-															</span>
-														</span>
-													</span>
-													<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0">Biljana Ilić</h3>
-													<p class="font-weight-medium text-color-grey text-3 mb-2">dentalni asistent</p>
-												</div>
-											</div>
+												</span>
+											</span>
+											<h3 class="font-weight-bold text-capitalize line-height-1 text-5-5 mt-4 mb-0"><?php echo htmlspecialchars($emp['first_name'] . ' ' . $emp['last_name']); ?></h3>
+											<p class="font-weight-medium text-color-grey text-3 mb-2"><?php echo htmlspecialchars($emp['position']); ?></p>
+										</div>
+									</div>
+										<?php endforeach; ?>
+									</div>
+									<div class="owl-nav team-carousel-nav">
+										<button type="button" role="presentation" class="owl-prev" aria-label="Prethodno"><i class="fas fa-chevron-left"></i></button>
+										<button type="button" role="presentation" class="owl-next" aria-label="Sljedeće"><i class="fas fa-chevron-right"></i></button>
+									</div>
 								</div>
 							</div>
+							<?php endif; ?>
 						</div>
 					</div>
 

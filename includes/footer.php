@@ -18,7 +18,7 @@
 		<div class="row text-center text-md-start py-4 my-5">
 			<div class="col-md-6 col-lg-3 align-self-center text-center text-md-start text-lg-center mb-5 mb-lg-0 d-flex justify-content-center" style="align-self:initial!important;">
 				<a href="index.php" class="text-decoration-none">
-					<img style="height: 200px;" src="images/logo-vertical.svg" class="img-fluid" alt="" />
+					<img style="height: 200px;" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('logo_footer') : 'images/logo-vertical.svg'); ?>" class="img-fluid" alt="" />
 				</a>
 			</div>
 			<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">

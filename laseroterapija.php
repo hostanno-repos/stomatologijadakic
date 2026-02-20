@@ -43,7 +43,7 @@
 							<p><b>LIJEČENJA</b> – liječenje afti, herpesa i raznih upalnih stanja laser djeluje procesom biostimulacije, gotovo trenutno uklanja bol i regeneriše tkivo. Uz terapeutsko djelovanje, dokazan je i preventivni učinak na tretirano tkivo.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img style="max-height:350px" src="img/usluge-slider/laser.png" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img style="max-height:350px" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_laser') : 'img/usluge-slider/laser.png'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 

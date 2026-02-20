@@ -40,7 +40,7 @@
 							<p>Prvi susret djeteta sa stomatološkom ordinacijom treba uključivati upoznavanje sa stomatologom, ordinacijom, instrumentima i uopšteno zubima, bez zahvata koji bi mogao izazvati negativnu reakciju i ''strah od stomatologa''.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img src="img/djecija-stomatologija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_djecija') : 'img/djecija-stomatologija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 

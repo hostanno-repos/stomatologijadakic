@@ -48,7 +48,7 @@
 							<p>Fiksna protetika se odnosi na zubne krunice i mostovi te zubne implantate, dok se mobilne proteze dijele na totalne i parcijalne. Kada je riječ o fiksnoj protetici, preporučujemo korištenje bezmetalnih keramičkih materijala, prvenstveno staklokeramike koja u potpunosti imitira prirodni zub koji nedostaje.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img src="img/usluge-slider/protetika.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_protetika') : 'img/usluge-slider/protetika.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 

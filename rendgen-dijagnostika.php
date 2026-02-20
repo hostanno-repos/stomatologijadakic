@@ -44,7 +44,7 @@
 							<p>Dentalna radiologija je neodvojiv dio moderne stomatološke dijagnostike. Ova grana dentalne medicine bavi se snimanjem zuba i vilica uz veoma nisku dozu zračenja, što je važno i za pacijente i za osoblje. Procedure snimanja traju vrlo kratko – od nekoliko sekundi do nekoliko minuta, čime se brzo postavlja temelj za dalji rad, uspostavljanje dijagnoze i određivanje terapije.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img src="img/usluge-slider/radiologija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_radiologija') : 'img/usluge-slider/radiologija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 				</div>

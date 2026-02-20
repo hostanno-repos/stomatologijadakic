@@ -109,3 +109,95 @@ function getContents($page) {
 function content($page, $key, $default = '') {
     echo getContent($page, $key, $default);
 }
+
+/**
+ * Default paths for site image slots (must match admin/config/site_images_slots.php).
+ * Used when no custom image is set in admin.
+ */
+function getSiteImageDefaults() {
+    return [
+        'logo_header' => 'images/logo-horizontal.svg',
+        'logo_footer' => 'images/logo-vertical.svg',
+        'logo_sidemenu' => 'images/logo-horizontal.svg',
+        'slider_1_left' => 'img/demos/dentist/slides/slide-dentist-1-1.jpg',
+        'slider_1_right' => 'img/demos/dentist/slides/slide-dentist-1-2.jpg',
+        'slider_2_bg' => 'img/demos/dentist/slides/slide-dentist-2-1.jpg',
+        'slider_decor_1' => 'img/demos/dentist/generic/generic-3.svg',
+        'slider_decor_2' => 'img/demos/dentist/generic/generic-4.svg',
+        'index_hero' => 'img/demos/dentist/generic/generic-5.jpg',
+        'index_box_icon1' => 'img/demos/dentist/icons/icon-1.svg',
+        'index_box_icon2' => 'img/demos/dentist/icons/icon-2.svg',
+        'index_box_icon3' => 'img/demos/dentist/icons/icon-3.svg',
+        'usluge_ortodoncija' => 'img/usluge-slider/ortodoncija.jpg',
+        'usluge_protetika' => 'img/usluge-slider/protetika.jpg',
+        'usluge_estetika' => 'img/usluge-slider/estetika.jpg',
+        'usluge_endodoncija' => 'img/usluge-slider/endodoncija.jpg',
+        'usluge_implantologija' => 'img/usluge-slider/implantologija.jpg',
+        'usluge_radiologija' => 'img/usluge-slider/radiologija.jpg',
+        'usluge_hirurgija' => 'img/usluge-slider/hirurgija.jpg',
+        'usluge_izbjeljivanje' => 'img/usluge-slider/izbjeljivanje.jpg',
+        'usluge_laser' => 'img/usluge-slider/laser.png',
+        'usluge_djecija' => 'img/djecija-stomatologija.jpg',
+        'usluge_icon1' => 'img/usluge-slider/icon1.png',
+        'usluge_icon2' => 'img/usluge-slider/icon2.png',
+        'usluge_icon3' => 'img/usluge-slider/icon3.png',
+        'usluge_icon4' => 'img/usluge-slider/icon4.png',
+        'usluge_icon5' => 'img/usluge-slider/icon5.png',
+        'usluge_icon6' => 'img/usluge-slider/icon6.png',
+        'usluge_icon7' => 'img/usluge-slider/icon7.png',
+        'onama_hero' => 'img/demos/dentist/generic/generic-5.jpg',
+        'onama_service_1' => 'img/demos/dentist/services/service-1.jpg',
+        'onama_service_2' => 'img/demos/dentist/services/service-2.jpg',
+        'onama_service_3' => 'img/demos/dentist/services/service-3.jpg',
+        'onama_service_4' => 'img/demos/dentist/services/service-4.jpg',
+    ];
+}
+
+/**
+ * Get site image path for a slot. Returns custom path from admin or default.
+ *
+ * @param string $key Slot key (e.g. logo_header, slider_1_left)
+ * @return string Path relative to site root (for use in src="...")
+ */
+function getSiteImage($key) {
+    $defaults = getSiteImageDefaults();
+    $default = $defaults[$key] ?? '';
+    $pdo = getContentDB();
+    if (!$pdo) {
+        return $default;
+    }
+    try {
+        $stmt = $pdo->prepare("SELECT path FROM site_images WHERE `key` = ? LIMIT 1");
+        $stmt->execute([$key]);
+        $row = $stmt->fetch();
+        if ($row && !empty($row['path'])) {
+            return 'admin/' . ltrim($row['path'], '/');
+        }
+    } catch (PDOException $e) {
+        error_log("Site image fetch error: " . $e->getMessage());
+    }
+    return $default;
+}
+
+/**
+ * Get all employees for frontend (e.g. team section)
+ *
+ * @return array List of employees (id, first_name, last_name, position, description, sort_order)
+ */
+function getEmployees() {
+    $pdo = getContentDB();
+    if (!$pdo) {
+        return [];
+    }
+    try {
+        $stmt = $pdo->query("
+            SELECT id, first_name, last_name, position, description, image, gender, sort_order
+            FROM employees
+            ORDER BY sort_order ASC, last_name ASC, first_name ASC
+        ");
+        return $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
+    } catch (PDOException $e) {
+        error_log("Employees fetch error: " . $e->getMessage());
+        return [];
+    }
+}

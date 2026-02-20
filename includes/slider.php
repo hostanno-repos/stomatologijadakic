@@ -5,8 +5,8 @@
 									
 				<!-- Carousel Slide 1 -->
 				<div class="owl-item p-relative overflow-hidden">
-					<div class="background-image-wrapper p-absolute d-none d-lg-block w-100 h-100 top-0 right-0 bottom-0" style="background-image: url(img/demos/dentist/slides/slide-dentist-1-1.jpg); background-size: cover; max-width: 50vw;"></div>
-					<div class="background-image-wrapper p-absolute w-100 h-100 top-0 left-0 bottom-0" style="background-image: url(img/demos/dentist/slides/slide-dentist-1-2.jpg); background-size: cover; max-width: 50vw;"></div>
+					<div class="background-image-wrapper p-absolute d-none d-lg-block w-100 h-100 top-0 right-0 bottom-0" style="background-image: url(<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('slider_1_left') : 'img/demos/dentist/slides/slide-dentist-1-1.jpg'); ?>); background-size: cover; max-width: 50vw;"></div>
+					<div class="background-image-wrapper p-absolute w-100 h-100 top-0 left-0 bottom-0" style="background-image: url(<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('slider_1_right') : 'img/demos/dentist/slides/slide-dentist-1-2.jpg'); ?>); background-size: cover; max-width: 50vw;"></div>
 					<div class="container p-relative z-index-3 h-100">
 						<div class="row align-items-center h-100">
 							<div class="col-lg-8 col-xl-6 text-center text-md-start">
@@ -18,7 +18,7 @@
 				</div>
 				<!-- Carousel Slide 2 -->
 				<div class="owl-item p-relative overflow-hidden">
-					<div class="background-image-wrapper p-absolute d-none d-lg-block w-100 h-100 top-0 right-0 bottom-0" style="background-image: url(img/demos/dentist/slides/slide-dentist-2-1.jpg); background-size: cover;"></div>
+					<div class="background-image-wrapper p-absolute d-none d-lg-block w-100 h-100 top-0 right-0 bottom-0" style="background-image: url(<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('slider_2_bg') : 'img/demos/dentist/slides/slide-dentist-2-1.jpg'); ?>); background-size: cover;"></div>
 					<div class="container p-relative z-index-3 h-100">
 						<div class="row align-items-center justify-content-end h-100">
 							<div class="col-lg-8 col-xl-6 text-center text-md-start">
@@ -37,9 +37,9 @@
 		</div>
 	</div>
 	<div class="p-absolute custom-el-pos-1 d-none d-xl-block z-index-2">
-		<img width="353" height="407" src="img/demos/dentist/generic/generic-3.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary'}" />
+		<img width="353" height="407" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('slider_decor_1') : 'img/demos/dentist/generic/generic-3.svg'); ?>" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-tertiary'}" />
 	</div>
 	<div class="p-absolute custom-el-pos-2 rotate-l-65 d-none d-xl-block z-index-2">
-		<img width="330" height="346" src="img/demos/dentist/generic/generic-4.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+		<img width="330" height="346" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('slider_decor_2') : 'img/demos/dentist/generic/generic-4.svg'); ?>" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
 	</div>
 </div>

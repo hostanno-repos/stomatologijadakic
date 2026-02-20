@@ -7,7 +7,7 @@
 	</button>
 	<div class="pt-5">
 		<a href="index.php">
-			<img alt="Porto" width="200" src="images/logo-horizontal.svg">
+			<img alt="Porto" width="200" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('logo_sidemenu') : 'images/logo-horizontal.svg'); ?>">
 		</a>
 		<p class="py-4 mb-2"><?php echo function_exists('getContent') ? getContent('sidemenu', 'description', 'Provjerite zašto smo najbolja stomatološka ordinacija u gradu!') : 'Provjerite zašto smo najbolja stomatološka ordinacija u gradu!'; ?></p>
 		<h4 class="text-color-primary text-4"><?php echo function_exists('getContent') ? getContent('sidemenu', 'contact_title', 'Kontakt') : 'Kontakt'; ?></h4>

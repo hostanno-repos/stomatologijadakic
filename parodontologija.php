@@ -49,7 +49,7 @@
 
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img src="img/djecija-stomatologija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_djecija') : 'img/djecija-stomatologija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 

@@ -49,7 +49,7 @@
 							<p>Korijenski kanali mogu se proširiti ručno ili mašinki, pri čemu je mašinsko širenje brže i kvalitetnije. Kada se kanal pravilno proširi, primjenjuju se lijekovi i zub se privremeno zatvara. U sljedećoj seansi liječenje korijenskog kanala završava se punjenjem kanala i kontrolnim rendgenom. Kod teške upale lijek je potrebno mijenjati nekoliko puta, tako da liječenje može trajati nekoliko mjeseci.</p>
 						</div>
 						<div class="col-lg-4 text-center pt-4 pt-lg-0">
-							<img style="max-height:350px" src="img/usluge-slider/endodoncija.jpg" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
+							<img style="max-height:350px" src="<?php echo htmlspecialchars(function_exists('getSiteImage') ? getSiteImage('usluge_endodoncija') : 'img/usluge-slider/endodoncija.jpg'); ?>" class="img-fluid box-shadow-4 appear-animation" alt="" data-appear-animation="expandIn" data-appear-animation-delay="100" data-appear-animation-duration="600ms" />
 						</div>
 					</div>
 				</div>
