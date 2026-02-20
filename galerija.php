@@ -122,9 +122,10 @@
 							<div class="row gallery-images-grid" data-gallery-id="<?php echo $gallery_id; ?>">
 								<?php foreach ($gallery_images as $index => $image): ?>
 									<?php 
-									// Build correct media URL - file_path is stored as /assets/uploads/galleries/X/filename.jpg
-									// Media files are stored in admin/assets/uploads/ - use relative path for subdirectory compatibility
+									// Build media URL - apsolutna putanja kao u adminu (da video prikaže prvu scenu)
+									$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . ($_SERVER['HTTP_HOST'] ?? '') . rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/\\');
 									$media_url = 'admin/' . ltrim($image['file_path'], '/');
+									$media_url_absolute = $base_url . '/' . $media_url;
 									$isVideo = strpos($image['mime_type'] ?? '', 'video/') === 0;
 									// For file path, remove leading slash and use relative path from __DIR__
 									$file_path_clean = ltrim($image['file_path'], '/');
@@ -143,8 +144,13 @@
 										   data-video-autoplay="true"
 										   title="<?php echo htmlspecialchars($image['title'] ?? $image['original_filename'] ?? ''); ?>">
 											<?php if ($isVideo): ?>
-												<div class="gallery-video-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: #e9ecef; transition: transform 0.3s ease;">
-													<i class="fas fa-play-circle text-color-primary" style="font-size: 4rem; opacity: 0.8;"></i>
+												<div class="gallery-video-placeholder position-relative" style="height: 250px; background: #000; overflow: hidden;">
+													<video style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" muted playsinline>
+														<source src="<?php echo htmlspecialchars($media_url_absolute); ?>" type="<?php echo htmlspecialchars($image['mime_type'] ?? 'video/mp4'); ?>">
+													</video>
+													<div class="position-absolute top-0 end-0 m-2 px-2 py-1 rounded" style="background: rgba(0,0,0,0.6); color: white; font-size: 0.75rem; z-index: 1;">
+														<i class="fas fa-video me-1"></i> Video
+													</div>
 												</div>
 											<?php else: ?>
 												<img src="<?php echo htmlspecialchars($media_url); ?>" 
@@ -388,7 +394,7 @@
 		}
 		
 		.gallery-image-link:hover img,
-		.gallery-video-link:hover .gallery-video-placeholder {
+		.gallery-video-link:hover .gallery-video-placeholder video {
 			transform: scale(1.05);
 		}
 		
