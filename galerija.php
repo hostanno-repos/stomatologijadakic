@@ -128,9 +128,8 @@
 								<?php foreach ($gallery_images as $index => $image): ?>
 									<?php 
 									// Build correct media URL - file_path is stored as /assets/uploads/galleries/X/filename.jpg
-									// Media files are physically stored in /admin/assets/uploads/, so we need to prepend /admin
-									// Since we're in root, we also need to prepend the project folder name
-									$media_url = '/admin/' . ltrim($image['file_path'], '/');
+									// Media files are stored in admin/assets/uploads/ - use relative path for subdirectory compatibility
+									$media_url = 'admin/' . ltrim($image['file_path'], '/');
 									$isVideo = strpos($image['mime_type'] ?? '', 'video/') === 0;
 									// For file path, remove leading slash and use relative path from __DIR__
 									$file_path_clean = ltrim($image['file_path'], '/');
@@ -145,10 +144,11 @@
 										   data-gallery="gallery-<?php echo $gallery_id; ?>"
 										   data-index="<?php echo $index; ?>"
 										   data-type="<?php echo $isVideo ? 'video' : 'image'; ?>"
+										   data-mime-type="<?php echo $isVideo ? htmlspecialchars($image['mime_type'] ?? 'video/mp4') : ''; ?>"
 										   data-video-autoplay="true"
 										   title="<?php echo htmlspecialchars($image['title'] ?? $image['original_filename'] ?? ''); ?>">
 											<?php if ($isVideo): ?>
-												<video class="img-fluid w-100" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;" muted>
+												<video class="img-fluid w-100" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;" muted preload="metadata" playsinline>
 													<source src="<?php echo htmlspecialchars($media_url); ?>" type="<?php echo htmlspecialchars($image['mime_type']); ?>">
 												</video>
 												<div class="video-badge position-absolute top-0 end-0 m-2" style="background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem;">
@@ -191,8 +191,7 @@
 										$cover_stmt->execute([$gallery['id']]);
 										$cover_result = $cover_stmt->fetch();
 										if ($cover_result) {
-											// Images are physically stored in /admin/assets/uploads/, so we need to prepend /admin
-											$cover_image = '/admin/' . ltrim($cover_result['file_path'], '/');
+											$cover_image = 'admin/' . ltrim($cover_result['file_path'], '/');
 										}
 									}
 									?>
