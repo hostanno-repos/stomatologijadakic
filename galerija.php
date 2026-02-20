@@ -1,13 +1,14 @@
 <!-- HEAD -->
 <?php 
 	include_once('includes/head.php'); 
+	include_once('includes/cms_db_config.php');
 	$active = "galerija";
 	
 	try {
 		$cms_pdo = new PDO(
-			"mysql:host=localhost;dbname=dakic_cms;charset=utf8mb4",
-			"root",
-			"",
+			"mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . (defined('DB_CHARSET') ? DB_CHARSET : 'utf8mb4'),
+			DB_USER,
+			DB_PASS,
 			[
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

@@ -13,11 +13,15 @@ function getContentDB() {
     static $pdo = null;
     
     if ($pdo === null) {
+        if (!defined('DB_HOST')) {
+            define('ADMIN_PATH', dirname(__DIR__) . '/admin');
+            require_once ADMIN_PATH . '/config/config.php';
+        }
         try {
             $pdo = new PDO(
-                "mysql:host=localhost;dbname=dakic_cms;charset=utf8mb4",
-                "root",
-                "",
+                "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . (defined('DB_CHARSET') ? DB_CHARSET : 'utf8mb4'),
+                DB_USER,
+                DB_PASS,
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
