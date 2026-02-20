@@ -40,15 +40,23 @@ function currentUrl() {
  * Log message
  */
 function logMessage($message, $level = 'INFO') {
-    if (!LOG_ENABLED) {
+    if (!defined('LOG_ENABLED') || !LOG_ENABLED) {
         return;
+    }
+    if (!defined('LOG_PATH')) {
+        return;
+    }
+    
+    $logDir = rtrim(LOG_PATH, '/\\');
+    if (!is_dir($logDir)) {
+        @mkdir($logDir, 0755, true);
     }
     
     $logFile = LOG_PATH . date('Y-m-d') . '.log';
     $timestamp = date('Y-m-d H:i:s');
     $logEntry = "[{$timestamp}] [{$level}] {$message}" . PHP_EOL;
     
-    file_put_contents($logFile, $logEntry, FILE_APPEND);
+    @file_put_contents($logFile, $logEntry, FILE_APPEND);
 }
 
 /**
