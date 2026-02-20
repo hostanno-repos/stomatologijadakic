@@ -64,5 +64,10 @@
             <li class="nav-item"><a class="nav-link" href="pregled-racuna.php"><span class="nav-icon"></span> Pregled računa</a></li>
         </ul>
         </li>
+        <li class="nav-title">IZVJEŠTAJI</li>
+        <li class="nav-item"><a class="nav-link" href="statistika.php">
+            <svg class="nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-chart"></use>
+            </svg> Statistika</a></li>
     </ul>
 </div>
