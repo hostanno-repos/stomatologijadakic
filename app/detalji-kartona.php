@@ -323,14 +323,14 @@ if (isset($_SESSION["logged_in"]) && $now < $_SESSION['expire']) {
                                                 src="<?php echo $moja_intervencija['intervencije_slika'] ?>" alt="" width="100%"><?php } else {
                                             echo "Nema slike";
                                         } ?><br />
-                                        Opis: <?php echo $moja_intervencija['intervencije_opis'] ?>
+                                        Tip: <?php echo $sigle_tip_intervencije['tipoviintervencija_naziv'] ?>
                                     </div>
                                     <div class="card-footer bg-transparent border-dark">
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example"
                                             style="width:100%;">
-                                            <button onclick="location.href=''" class="btn btn-outline-info"
+                                            <button onclick="location.href='detalji-intervencije.php?intervencija=<?php echo $moja_intervencija['intervencije_id'] ?>'" class="btn btn-outline-info"
                                                 type="button">Detalji</button>
-                                            <button onclick="location.href=''" class="btn btn-outline-info"
+                                            <button onclick="location.href='uredi-intervenciju.php?intervencija=<?php echo $moja_intervencija['intervencije_id'] ?>'" class="btn btn-outline-info"
                                                 type="button">Uredi</button>
                                             <button class="btn btn-outline-info" type="button">Izbriši</button>
                                         </div>
