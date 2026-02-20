@@ -3,17 +3,11 @@
 	include_once('includes/head.php'); 
 	$active = "galerija";
 	
-	// Connect to CMS database
-	$cms_db_host = "localhost";
-	$cms_db_name = "doktordakic_dakic_cms";
-	$cms_db_user = "doktordakic_dakic_cms";
-	$cms_db_pass = "53rpWmwldqj1n2F4";
-	
 	try {
 		$cms_pdo = new PDO(
-			"mysql:host={$cms_db_host};dbname={$cms_db_name};charset=utf8mb4",
-			$cms_db_user,
-			$cms_db_pass,
+			"mysql:host=localhost;dbname=dakic_cms;charset=utf8mb4",
+			"root",
+			"",
 			[
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -139,7 +133,7 @@
 									?>
 									<div class="col-6 col-md-4 col-lg-3 mb-4">
 										<a href="<?php echo htmlspecialchars($media_url); ?>" 
-										   class="gallery-media-link lightbox d-block position-relative overflow-hidden <?php echo $isVideo ? 'gallery-video-link' : 'gallery-image-link'; ?>" 
+										   class="gallery-media-link manual d-block position-relative overflow-hidden <?php echo $isVideo ? 'gallery-video-link' : 'gallery-image-link'; ?>" 
 										   data-plugin-lightbox="true"
 										   data-gallery="gallery-<?php echo $gallery_id; ?>"
 										   data-index="<?php echo $index; ?>"
@@ -148,11 +142,8 @@
 										   data-video-autoplay="true"
 										   title="<?php echo htmlspecialchars($image['title'] ?? $image['original_filename'] ?? ''); ?>">
 											<?php if ($isVideo): ?>
-												<video class="img-fluid w-100" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;" muted preload="metadata" playsinline>
-													<source src="<?php echo htmlspecialchars($media_url); ?>" type="<?php echo htmlspecialchars($image['mime_type']); ?>">
-												</video>
-												<div class="video-badge position-absolute top-0 end-0 m-2" style="background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem;">
-													<i class="fas fa-video"></i>
+												<div class="gallery-video-placeholder d-flex align-items-center justify-content-center" style="height: 250px; background: #e9ecef; transition: transform 0.3s ease;">
+													<i class="fas fa-play-circle text-color-primary" style="font-size: 4rem; opacity: 0.8;"></i>
 												</div>
 											<?php else: ?>
 												<img src="<?php echo htmlspecialchars($media_url); ?>" 
@@ -298,114 +289,76 @@
 		<?php include_once('includes/footer-script.php'); ?>
 		
 		<?php if ($gallery_id > 0 && !empty($gallery_images)): ?>
-		<!-- Gallery Lightbox Script -->
+		<!-- Gallery Lightbox Script - event delegation, bez konflikta sa temom -->
+		<div id="gallery-video-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);z-index:99999;align-items:center;justify-content:center;">
+			<button type="button" onclick="document.getElementById('gallery-video-overlay').style.display='none';var v=document.getElementById('gallery-video-player');if(v){v.pause();v.removeAttribute('src');v.load();}document.body.classList.remove('lightbox-opened');" style="position:absolute;top:15px;right:15px;background:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;z-index:1;">&times;</button>
+			<video id="gallery-video-player" controls autoplay playsinline style="max-width:95vw;max-height:95vh;outline:none;"></video>
+		</div>
 		<script>
-		(function($) {
-			'use strict';
+		(function() {
+			var $ = typeof jQuery !== 'undefined' ? jQuery : (typeof $ !== 'undefined' ? $ : null);
+			if (!$) return;
 			
-			// Initialize lightbox manually
-			function initGalleryLightbox() {
-				if (typeof $ === 'undefined' || typeof $.fn === 'undefined') {
-					setTimeout(initGalleryLightbox, 100);
-					return;
+			// Slike - Magnific delegate (ispravno otvara kliknutu sliku)
+			$('.gallery-images-grid').magnificPopup({
+				delegate: 'a.gallery-image-link',
+				type: 'image',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					preload: [0, 1],
+					tPrev: 'Prethodna slika',
+					tNext: 'Sledeća slika',
+					tCounter: '<span class="mfp-counter">%curr% od %total%</span>'
+				},
+				mainClass: 'mfp-with-zoom',
+				zoom: { enabled: false },
+				callbacks: {
+					open: function() { document.body.classList.add('lightbox-opened'); },
+					close: function() { document.body.classList.remove('lightbox-opened'); }
 				}
-				
-				if (typeof $.fn.magnificPopup !== 'undefined') {
-					var $imageLinks = $('.gallery-images-grid .gallery-image-link.lightbox');
-					var $videoLinks = $('.gallery-images-grid .gallery-video-link.lightbox');
-					
-					// Initialize images
-					if ($imageLinks.length > 0) {
-						$imageLinks.off('click.magnificPopup');
-						$imageLinks.magnificPopup({
-							type: 'image',
-							gallery: {
-								enabled: true,
-								navigateByImgClick: true,
-								preload: [0, 1],
-								tPrev: 'Prethodna slika',
-								tNext: 'Sledeća slika',
-								tCounter: '<span class="mfp-counter">%curr% od %total%</span>'
-							},
-							image: {
-								tError: '<a href="%url%">Slika #%curr%</a> se ne može učitati.',
-								titleSrc: function(item) {
-									return item.el.attr('title') || '';
-								}
-							},
-							mainClass: 'mfp-with-zoom',
-							zoom: {
-								enabled: true,
-								duration: 300
-							},
-							callbacks: {
-								open: function() {
-									$('body').addClass('lightbox-opened');
-								},
-								close: function() {
-									$('body').removeClass('lightbox-opened');
-								}
-							}
-						});
-					}
-					
-					// Initialize videos with autoplay
-					if ($videoLinks.length > 0) {
-						$videoLinks.off('click.magnificPopup');
-						$videoLinks.on('click', function(e) {
-							e.preventDefault();
-							var $link = $(this);
-							var videoUrl = $link.attr('href');
-							var mimeType = $link.data('mime-type') || 'video/mp4';
-							
-							// Create custom popup for video
-							$.magnificPopup.open({
-								items: {
-									src: '<div class="mfp-video-container" style="text-align: center; padding: 20px;"><video controls autoplay muted loop style="width: 100%; max-width: 90vw; max-height: 90vh; outline: none;" class="mfp-video"><source src="' + videoUrl + '" type="' + mimeType + '">Vaš browser ne podržava video tag.</video></div>',
-									type: 'inline'
-								},
-								mainClass: 'mfp-fade',
-								removalDelay: 300,
-								callbacks: {
-									open: function() {
-										$('body').addClass('lightbox-opened');
-									},
-									close: function() {
-										$('body').removeClass('lightbox-opened');
-										// Stop video playback
-										$('.mfp-video').each(function() {
-											this.pause();
-											this.currentTime = 0;
-										});
-									}
-								}
-							});
-						});
-					}
-					
-					console.log('Gallery lightbox initialized for ' + ($imageLinks.length + $videoLinks.length) + ' media files');
-				} else {
-					setTimeout(initGalleryLightbox, 200);
-				}
-			}
-			
-			// Try multiple times to ensure scripts are loaded
-			if (document.readyState === 'loading') {
-				document.addEventListener('DOMContentLoaded', function() {
-					setTimeout(initGalleryLightbox, 1000);
-				});
-			} else {
-				setTimeout(initGalleryLightbox, 1000);
-			}
-			
-			// Also try on window load
-			window.addEventListener('load', function() {
-				setTimeout(initGalleryLightbox, 500);
 			});
 			
-			// Fallback - try after longer delay
-			setTimeout(initGalleryLightbox, 2000);
-		})(typeof jQuery !== 'undefined' ? jQuery : typeof $ !== 'undefined' ? $ : null);
+			// Video - custom overlay
+			$(document).on('click', '.gallery-images-grid .gallery-video-link', function(e) {
+				e.preventDefault();
+				var $link = $(this);
+				var href = $link.attr('href');
+				var a = document.createElement('a');
+				a.href = href;
+				var videoUrl = a.href;
+				var overlay = document.getElementById('gallery-video-overlay');
+				var player = document.getElementById('gallery-video-player');
+				player.removeAttribute('src');
+				player.innerHTML = '';
+				player.src = videoUrl;
+				player.load();
+				overlay.style.display = 'flex';
+				document.body.classList.add('lightbox-opened');
+				player.play().catch(function() {});
+			});
+			
+			document.getElementById('gallery-video-overlay').addEventListener('click', function(ev) {
+				if (ev.target === this) {
+					this.style.display = 'none';
+					var v = document.getElementById('gallery-video-player');
+					if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+					document.body.classList.remove('lightbox-opened');
+				}
+			});
+			
+			document.addEventListener('keydown', function(ev) {
+				if (ev.key === 'Escape') {
+					var overlay = document.getElementById('gallery-video-overlay');
+					if (overlay.style.display === 'flex') {
+						overlay.style.display = 'none';
+						var v = document.getElementById('gallery-video-player');
+						if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+						document.body.classList.remove('lightbox-opened');
+					}
+				}
+			});
+		})();
 		</script>
 		
 		<style>
@@ -423,12 +376,18 @@
 			opacity: 1 !important;
 		}
 		
-		/* Gallery Image Hover Effects */
-		.gallery-image-link:hover .gallery-overlay {
+		/* Gallery Image & Video Hover Effects */
+		.gallery-image-link:hover .gallery-overlay,
+		.gallery-video-link:hover .gallery-overlay {
 			opacity: 1 !important;
 		}
 		
-		.gallery-image-link:hover img {
+		.gallery-video-link:hover {
+			text-decoration: none !important;
+		}
+		
+		.gallery-image-link:hover img,
+		.gallery-video-link:hover .gallery-video-placeholder {
 			transform: scale(1.05);
 		}
 		
@@ -489,7 +448,8 @@
 			}
 			
 			.album-cover,
-			.gallery-image-link img {
+			.gallery-image-link img,
+			.gallery-video-placeholder {
 				height: 200px !important;
 			}
 		}
@@ -502,7 +462,8 @@
 			}
 			
 			.album-cover,
-			.gallery-image-link img {
+			.gallery-image-link img,
+			.gallery-video-placeholder {
 				height: 250px !important;
 			}
 			

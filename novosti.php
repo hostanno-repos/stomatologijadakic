@@ -3,12 +3,6 @@
 	include_once('includes/head.php'); 
 	$active = "novosti";
 	
-	// Connect to CMS database
-	$cms_db_host = "localhost";
-	$cms_db_name = "doktordakic_dakic_cms";
-	$cms_db_user = "doktordakic_dakic_cms";
-	$cms_db_pass = "53rpWmwldqj1n2F4";
-	
 	// Helper function for sanitization
 	if (!function_exists('sanitize')) {
 		function sanitize($input) {
@@ -18,9 +12,9 @@
 	
 	try {
 		$cms_pdo = new PDO(
-			"mysql:host={$cms_db_host};dbname={$cms_db_name};charset=utf8mb4",
-			$cms_db_user,
-			$cms_db_pass,
+			"mysql:host=localhost;dbname=dakic_cms;charset=utf8mb4",
+			"root",
+			"",
 			[
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

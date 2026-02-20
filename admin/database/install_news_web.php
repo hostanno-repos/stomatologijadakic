@@ -18,11 +18,12 @@ if (!$allowed && php_sapi_name() !== 'cli') {
 define('ADMIN_PATH', dirname(__DIR__));
 define('BASE_PATH', dirname(ADMIN_PATH));
 
-// Database credentials
-$dbHost = 'localhost';
-$dbUser = 'doktordakic_dakic_cms';
-$dbPass = '53rpWmwldqj1n2F4';
-$dbName = 'doktordakic_dakic_cms';
+// Use admin config (dakic_cms locally) - same DB as admin panel
+require_once ADMIN_PATH . '/config/config.php';
+$dbHost = DB_HOST;
+$dbName = DB_NAME;
+$dbUser = DB_USER;
+$dbPass = DB_PASS;
 
 $errors = [];
 $success = [];

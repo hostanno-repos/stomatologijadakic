@@ -13,16 +13,11 @@ function getContentDB() {
     static $pdo = null;
     
     if ($pdo === null) {
-        $dbHost = "localhost";
-        $dbName = "doktordakic_dakic_cms";
-        $dbUser = "doktordakic_dakic_cms";
-        $dbPass = "53rpWmwldqj1n2F4";
-        
         try {
             $pdo = new PDO(
-                "mysql:host={$dbHost};dbname={$dbName};charset=utf8mb4",
-                $dbUser,
-                $dbPass,
+                "mysql:host=localhost;dbname=dakic_cms;charset=utf8mb4",
+                "root",
+                "",
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

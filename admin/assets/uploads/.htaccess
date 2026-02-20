@@ -1,0 +1,7 @@
+# Ispravni MIME tipovi za video fajlove
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType video/ogg .ogv
+    AddType video/quicktime .mov
+</IfModule>
