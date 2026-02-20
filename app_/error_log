@@ -1,0 +1,39 @@
+[31-Jul-2023 13:46:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[31-Jul-2023 13:46:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[02-Aug-2023 16:55:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[02-Aug-2023 16:55:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[02-Aug-2023 16:55:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[02-Aug-2023 16:55:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[02-Aug-2023 16:56:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[02-Aug-2023 16:56:01 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[10-Aug-2023 18:33:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[10-Aug-2023 18:33:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[10-Aug-2023 18:34:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[10-Aug-2023 18:34:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[11-Aug-2023 15:23:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/includes/head.php:1) in /home/doktordakic/public_html/app/admin.php on line 362
+[16-Aug-2023 07:08:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/includes/head.php:1) in /home/doktordakic/public_html/app/admin.php on line 362
+[19-Aug-2023 05:34:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/includes/head.php:1) in /home/doktordakic/public_html/app/admin.php on line 362
+[31-Aug-2023 10:16:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[31-Aug-2023 10:16:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[31-Aug-2023 10:16:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[31-Aug-2023 10:16:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[31-Aug-2023 10:16:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[31-Aug-2023 10:16:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[31-Aug-2023 10:16:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 31
+[31-Aug-2023 10:16:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/index.php:23) in /home/doktordakic/public_html/app/index.php on line 42
+[31-Aug-2023 16:57:25 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/includes/head.php:1) in /home/doktordakic/public_html/app/admin.php on line 362
+[31-Aug-2023 21:28:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/doktordakic/public_html/app/includes/head.php:1) in /home/doktordakic/public_html/app/admin.php on line 362
+[20-Feb-2026 20:02:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'doktordakic_app.tipoviIntervencija' doesn't exist in /home/doktordakic/public_html/app_/class/intervencije.php:40
+Stack trace:
+#0 /home/doktordakic/public_html/app_/class/intervencije.php(40): PDOStatement->execute()
+#1 /home/doktordakic/public_html/app_/tipovi-intervencija.php(14): tipoviIntervencija->fetch_all_tipovi_intervencija()
+#2 {main}
+  thrown in /home/doktordakic/public_html/app_/class/intervencije.php on line 40
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
+[20-Feb-2026 20:03:00 UTC] PHP Warning:  Trying to access array offset on false in /home/doktordakic/public_html/app_/pregled-intervencija.php on line 78
