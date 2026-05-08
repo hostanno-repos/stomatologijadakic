@@ -247,6 +247,7 @@ if (isset($_SESSION["logged_in"]) && $now < $_SESSION['expire']) {
                                         $tip_intervencije_id = intval($moja_intervencija['intervencije_idtipa']);
                                         $sigle_tip_intervencije = new tipIntervencije;
                                         $sigle_tip_intervencije = $sigle_tip_intervencije->fetch_single_tip_intervencije($tip_intervencije_id);
+                                        $naziv_tipa_intervencije = $sigle_tip_intervencije['tipoviintervencija_naziv'] ?? 'Nepoznat tip intervencije';
 
                                         ?>
                                         <tr>
@@ -263,7 +264,7 @@ if (isset($_SESSION["logged_in"]) && $now < $_SESSION['expire']) {
                                                 <?php echo $moja_intervencija['intervencije_zub'] ?>
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                <?php echo $sigle_tip_intervencije['tipoviintervencija_naziv'] ?>
+                                                <?php echo $naziv_tipa_intervencije ?>
                                             </td>
                                             <!-- <td style="vertical-align: middle;"><?php //if($moja_intervencija['intervencije_slika'] != "") { ?><img src="<?php //echo $moja_intervencija['intervencije_slika'] ?>" alt="" width="200px"><?php //} else { echo "Nema slike"; } ?></td> -->
                                             <td style="vertical-align: middle;">
@@ -306,12 +307,13 @@ if (isset($_SESSION["logged_in"]) && $now < $_SESSION['expire']) {
                                 $tip_intervencije_id = intval($moja_intervencija['intervencije_idtipa']);
                                 $sigle_tip_intervencije = new tipIntervencije;
                                 $sigle_tip_intervencije = $sigle_tip_intervencije->fetch_single_tip_intervencije($tip_intervencije_id);
+                                $naziv_tipa_intervencije = $sigle_tip_intervencije['tipoviintervencija_naziv'] ?? 'Nepoznat tip intervencije';
 
                                 ?>
                                 <div class="card border-dark mb-3">
                                     <div class="card-header bg-transparent border-dark">
                                         <h5 class="card-title mb-0">
-                                            <?php echo $sigle_tip_intervencije['tipoviintervencija_naziv'] ?>
+                                            <?php echo $naziv_tipa_intervencije ?>
                                         </h5>
                                     </div>
                                     <div class="card-body text-dark">
@@ -323,7 +325,7 @@ if (isset($_SESSION["logged_in"]) && $now < $_SESSION['expire']) {
                                                 src="<?php echo $moja_intervencija['intervencije_slika'] ?>" alt="" width="100%"><?php } else {
                                             echo "Nema slike";
                                         } ?><br />
-                                        Tip: <?php echo $sigle_tip_intervencije['tipoviintervencija_naziv'] ?>
+                                        Tip: <?php echo $naziv_tipa_intervencije ?>
                                     </div>
                                     <div class="card-footer bg-transparent border-dark">
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example"
