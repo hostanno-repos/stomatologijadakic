@@ -3,12 +3,29 @@
 //GET ALL INTERVENCIJE FOR ONE PACIJENT
 class allInterventions
 {
-    public function fetch_all_intervencije()
+    public function fetch_all_intervencije($limit = null, $offset = 0)
     {
         global $pdo;
-        $query = $pdo->prepare("SELECT * FROM intervencije ORDER BY intervencije_timestamp DESC");
+        if ($limit === null) {
+            $query = $pdo->prepare("SELECT * FROM intervencije ORDER BY intervencije_timestamp DESC");
+            $query->execute();
+            return $query->fetchAll();
+        }
+
+        $query = $pdo->prepare("SELECT * FROM intervencije ORDER BY intervencije_timestamp DESC LIMIT :limit OFFSET :offset");
+        $query->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
+        $query->bindValue(':offset', (int) $offset, PDO::PARAM_INT);
         $query->execute();
         return $query->fetchAll();
+    }
+
+    public function count_all_intervencije()
+    {
+        global $pdo;
+        $query = $pdo->prepare("SELECT COUNT(*) as total FROM intervencije");
+        $query->execute();
+        $result = $query->fetch();
+        return (int) ($result['total'] ?? 0);
     }
 }
 
